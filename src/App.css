@@ -1,25 +1,187 @@
-.app {
-  height: 100vh;
-  width: 100vw;
-  transition: background-color 1s ease-in;
+/* General */
+:root {
+  --text-color: #0b1b48;
+  --primary-color: #759eda;
+  --secondary-color: #5879c7;
+  --background-color: #9ccef4;
 }
 
-.app__header,
-.app__main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+body{
   font-family: "Raleway", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background-color: var(--background-color);
 }
 
-/*  Search bar */
+/* Header */
+.header--container{
+  background-color: var(--primary-color);
+  display: flex;
+  padding: 1.5rem;
+}
+.header--button{
+      color: var(--text-color); /* Text color */ 
+      background-color: var(--secondary-color); /* Remove background color */
+      border: 2px solid var(--secondary-color); /* Border thickness, line style, and color */
+      border-radius: 3px; /* Adds curve to border corners */
+      text-transform: uppercase; /* Make letters uppercase */
+      padding: 15px;
+}
+.header--search{
+  border: 1px solid var(--sr);
+  height: 20px;
+  outline: 0;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  margin-right: 10px;
+}
+::placeholder { 
+  color: white;
+  font-size: 12pt;
+}
+input:focus { 
+  border-bottom:1px solid var(--text-color);
+}
 
-/* Current weather */
+/* Container */
+.main--container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  line-height: 2;
+}
+.main-weather{
+  color: var(--text-color);
+}
+p{
+  word-spacing: 6px;
+}
+.main-temperature-addition{
+  font-size: 10pt;
+}
+.main-temperature-image{
+  text-align: center;
+  padding-top: 2rem;
+}
+.main-temperature-information{
+  text-align: center;
+}
+.main__image-temp{
+  width:20%;
+  height: 20%;
+}
+span{
+  font-weight: bold;
+}
+.span--delete{
+  word-spacing: 0;
+  font-weight: normal;
+}
+.main-temperature-image p {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+/* Grid */
 
-div {
-  border: 5px solid red;
+.grid__container {
+  margin: 2rem 0;
+  grid-template-columns: 1fr;
+}
+
+.grid--temp--one {
+  grid-area: temp1;
+}
+
+.grid--temp--two {
+  grid-area: temp2;
+}
+
+.grid--temp--three {
+  grid-area: temp3;
+}
+
+.grid--temp--four {
+  grid-area: temp4;
+}
+
+.grid--temp--five {
+  grid-area: temp5;
+}
+
+.grid--temp--six {
+  grid-area: temp6;
+}
+
+.grid--temp--seven {
+  grid-area: temp7;
+}
+
+/* xs screen */
+
+@media only screen and (max-width: 767px) {
+  /* header */
+  .header--container{
+    display: flex;
+    justify-content: space-between;
+  }
+/* Main Weather */
+.main-weather{
+  display: flex;
+  text-align: justify;
+  font-size: 9pt;
+}
+.main__image-temp{
+  width: 80%;
+  height: 80%;
+}
+.main-temperature-information{
+  margin-top: 80px;
+}
+  /* Grid-Mobile */
+  .grid--mobile{
+      display: flex;
+      margin: 1vh;
+      justify-content: space-between;
+  }
+  .grid--mobile:not(:nth-last-of-type(1)) {
+      border-bottom:2px solid var(--secondary-color);
+  }
+  .grid--mobile p{
+    margin: 50px 0px;
+  }
+  .image-placeholder{
+    width: 20%;
+    height: 20%;
+    padding: 10px 0px;
+  }
+  time{
+    margin: 50px 0px;
+  }
+  .main-temperature-addition{
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+/* sm screen and above */
+
+@media only screen and (min-width: 768px) {
+  .grid__container {
+      display: grid;
+      grid-gap: 2rem;
+      grid-template-areas: 'temp1 temp2 temp3' 'temp4 temp5 temp6' '. temp7 .';
+      grid-template-columns: 1fr 1fr 1fr;
+      text-align: center;
+      margin-top: 6rem;
+  }
+}
+@media only screen and (min-width:992px) {
+  .grid__container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas: 'temp1 temp2 temp3 temp4 temp5 temp6 temp7';
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+}
 }
