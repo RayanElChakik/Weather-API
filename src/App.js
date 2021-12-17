@@ -18,7 +18,7 @@ class App extends Component {
           <div className="main--container"> 
               <div className="main-weather">
               <div className="main-temperature-image">
-                      <img className="main__image-temp" src="https://via.placeholder.com/350x150" alt="Cloud-weather-image" placeholder="clear-clouds"/>
+                      <img className="main__image-temp"src={clear} alt="Cloud-weather-image" placeholder="clear-clouds"/>
                       <p>Overcast Clouds</p>
               </div>
               <div className="main-temperature-information">
@@ -31,37 +31,37 @@ class App extends Component {
               <div className="grid__container">
                   <div className="grid--mobile grid--temp--one">
                       <time>3:00</time>
-                      <img className="image-placeholder" src="https://via.placeholder.com/140x100" alt="Partly-cloudy Weather" placeholder="Partly-cloudy weather"/>
+                      <img className="image-placeholder" src={partlycloudy} alt="Partly-cloudy Weather" placeholder="Partly-cloudy weather"/>
                       <p>26 &deg;</p>
                   </div>
                   <div className="grid--mobile grid--temp--two">
                   <time>6:00</time>
-                    <img className="image-placeholder" src="https://via.placeholder.com/140x100" alt="Partly-cloudy Weather" placeholder="Partly-cloudy weather"/>
+                    <img className="image-placeholder" src={partlycloudy} alt="Partly-cloudy Weather" placeholder="Partly-cloudy weather"/>
                     <p>26 &deg;</p>
                   </div>
                   <div className="grid--mobile grid--temp--three">
                   <time>9:00</time>
-                    <img className="image-placeholder" src="https://via.placeholder.com/140x100" alt="Clear Weather" placeholder="Clear weather"/>
+                    <img className="image-placeholder" src={clear} alt="Clear Weather" placeholder="Clear weather"/>
                     <p>28 &deg;</p>
                   </div>
                   <div className="grid--mobile grid--temp--four">
                   <time>12:00</time>
-                    <img className="image-placeholder" src="https://via.placeholder.com/140x100" alt="Clear Weather" placeholder="Clear weather"/>
+                    <img className="image-placeholder" src={clear} alt="Clear Weather" placeholder="Clear weather"/>
                     <p>28 &deg;</p>
                   </div>
                   <div className="grid--mobile grid--temp--five">
                   <time>15:00</time>
-                    <img className="image-placeholder" src="https://via.placeholder.com/140x100" alt="Clear Weather" placeholder="Clear weather"/>
+                    <img className="image-placeholder" src={clear} alt="Clear Weather" placeholder="Clear weather"/>
                     <p>28 &deg;</p>
                   </div>
                   <div className="grid--mobile grid--temp--six">
                   <time>18:00</time>
-                    <img className="image-placeholder" src="https://via.placeholder.com/140x100" alt="Clear Weather" placeholder="Clear weather"/>
+                    <img className="image-placeholder" src={clear} alt="Clear Weather" placeholder="Clear weather"/>
                     <p>28 &deg;</p>
                   </div>
                   <div className="grid--mobile grid--temp--seven">
                   <time>21:00</time>
-                    <img className="image-placeholder" src="https://via.placeholder.com/140x100" alt="Clear Weather" placeholder="Clear weather"/>
+                    <img className="image-placeholder" src={clear} alt="Clear Weather" placeholder="Clear weather"/>
                     <p>26 &deg;</p>
                   </div>
               </div>
