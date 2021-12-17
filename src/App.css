@@ -58,6 +58,11 @@ p{
 }
 .main-temperature-addition{
   font-size: 10pt;
+  display: flex;
+  justify-content: center;
+}
+.main-temperature-addition p{
+  margin-left: 10px;
 }
 .main-temperature-image{
   text-align: center;
@@ -83,39 +88,25 @@ span{
   margin: 0;
   padding: 0;
 }
-/* Grid */
 
-.grid__container {
-  margin: 2rem 0;
-  grid-template-columns: 1fr;
+
+.upcoming-weather{
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 4rem;
 }
 
-.grid--temp--one {
-  grid-area: temp1;
+.upcoming-weather > div {
+  width: 100%;
 }
 
-.grid--temp--two {
-  grid-area: temp2;
+time {
+  display: block;
+  text-align: center;
 }
 
-.grid--temp--three {
-  grid-area: temp3;
-}
-
-.grid--temp--four {
-  grid-area: temp4;
-}
-
-.grid--temp--five {
-  grid-area: temp5;
-}
-
-.grid--temp--six {
-  grid-area: temp6;
-}
-
-.grid--temp--seven {
-  grid-area: temp7;
+.upcoming-weather p {
+  text-align: center;
 }
 
 /* xs screen */
@@ -132,56 +123,45 @@ span{
   text-align: justify;
   font-size: 9pt;
 }
+
 .main__image-temp{
   width: 80%;
   height: 80%;
 }
+
 .main-temperature-information{
   margin-top: 80px;
 }
-  /* Grid-Mobile */
-  .grid--mobile{
-      display: flex;
-      margin: 1vh;
-      justify-content: space-between;
-  }
-  .grid--mobile:not(:nth-last-of-type(1)) {
-      border-bottom:2px solid var(--secondary-color);
-  }
-  .grid--mobile p{
-    margin: 50px 0px;
-  }
-  .image-placeholder{
-    width: 20%;
-    height: 20%;
-    padding: 10px 0px;
-  }
-  time{
-    margin: 50px 0px;
-  }
-  .main-temperature-addition{
+
+.image-placeholder {
+  width: 42%;
+  height: 20%;
+  display: block;
+  margin: 0 auto;
+} 
+
+  /* Flex -Mobile */
+  .upcoming-weather{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
   }
-  
-}
-/* sm screen and above */
-
-@media only screen and (min-width: 768px) {
-  .grid__container {
-      display: grid;
-      grid-gap: 2rem;
-      grid-template-areas: 'temp1 temp2 temp3' 'temp4 temp5 temp6' '. temp7 .';
-      grid-template-columns: 1fr 1fr 1fr;
-      text-align: center;
-      margin-top: 6rem;
+  .flex--border:not(:nth-last-of-type(1)) {
+      border-bottom:2px solid var(--secondary-color);
   }
-}
-@media only screen and (min-width:992px) {
-  .grid__container {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-areas: 'temp1 temp2 temp3 temp4 temp5 temp6 temp7';
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-}
+  .flex--border{
+    display: flex;
+  }
+  time{
+    margin-top: 70px;
+  }
+  .flex--border p{
+    margin-top: 70px;
+  }
+  .image-placeholder{
+    width: 30%;
+    height: 30%;
+    padding: 10px 0px;
+  }
 }
