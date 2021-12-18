@@ -11,11 +11,11 @@ class Search extends React.Component {
     return (
       <div>
         <div className="header--container">
-              <input type="text" className="header--search" placeholder="Type in a city name" id="input-name"
+              <input type="text" className="header__search" placeholder="Type in a city name" id="input-name"
           onChange={event => {
             this.setState({ input: event.target.value });
           }}/>
-              <button className="header--button" 
+              <button className="header__button" 
               onClick={event => {
             this.props.handleInput(this.state.input);
           }}> Find Weather</button>

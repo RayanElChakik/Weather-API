@@ -26,9 +26,9 @@ export default class WeatherItem extends Component {
     }
   render() {
     return (
-      <div className="flex--border">
+      <div className="body__main--content">
       <time>{this.props.time.split(" ")[1].substring(0,5)}</time>
-      <img className="image-placeholder" src={require(`../img/weather-icons/${this.get_WeatherIcons(this.props.iconId)}.svg`)} alt="Partly-cloudy Weather" placeholder="Partly-cloudy weather"/>
+      <img className="body__main--imgPlaceholder" src={require(`../img/weather-icons/${this.get_WeatherIcons(this.props.iconId)}.svg`)} alt="Partly-cloudy Weather" placeholder="Partly-cloudy weather"/>
       <p>{Math.round(this.props.dayDegree)}&deg;</p>
   </div>
       );
@@ -56,16 +56,16 @@ export class MainWeather extends Component {
     }
   render() {
     return (
-      <div className="main-weather">
-              <div className="main-temperature-image">
-                      <img className="main__image-temp" src={require(`../img/weather-icons/${this.get_WeatherIcons(this.props.iconId)}.svg`)} alt="Cloud-weather-image" placeholder="clear-clouds"/>
+      <div className="body__main--weather">
+              <div className="body__main--tempContent">
+                      <img className="body__main--tempImg" src={require(`../img/weather-icons/${this.get_WeatherIcons(this.props.iconId)}.svg`)} alt="Cloud-weather-image" placeholder="clear-clouds"/>
                       <p>{this.props.currentWeather.weather[0].description}</p>
               </div>
-              <div className="main-temperature-information">
-                  <p><span>Temperature </span>  <span className="span--delete"> {Math.round(this.props.currentWeather.main.temp_min)}&deg; to {Math.round(this.props.currentWeather.main.temp_max)} &#8451;</span></p>
-                  <div className="main-temperature-addition">
+              <div className="body__main--tempInfo">
+                  <p><span>Temperature </span>  <span className="body__span--delete"> {Math.round(this.props.currentWeather.main.temp_min)}&deg; to {Math.round(this.props.currentWeather.main.temp_max)} &#8451;</span></p>
+                  <div className="body__main--tempAddInfo">
                     <p> <span>Humidity</span>  {this.props.currentWeather.main.humidity}% </p>
-                    <p> <span className="indent">Pressure </span> {this.props.currentWeather.main.pressure}</p>  
+                    <p> <span>Pressure </span> {this.props.currentWeather.main.pressure}</p>  
               </div>
               </div>
               </div>

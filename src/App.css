@@ -12,77 +12,45 @@ body{
   background-color: var(--background-color);
 }
 
-/* Header */
-.header--container{
-  background-color: var(--primary-color);
-  display: flex;
-  padding: 1.5rem;
-}
-.header--button{
-      color: var(--text-color); /* Text color */ 
-      background-color: var(--secondary-color); /* Remove background color */
-      border: 2px solid var(--secondary-color); /* Border thickness, line style, and color */
-      border-radius: 3px; /* Adds curve to border corners */
-      text-transform: uppercase; /* Make letters uppercase */
-      padding: 15px;
-}
-.header--search{
-  border: 1px solid var(--sr);
-  height: 20px;
-  outline: 0;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 10px;
-  margin-right: 10px;
-}
-::placeholder { 
-  color: white;
-  font-size: 12pt;
-}
-input:focus { 
-  border-bottom:1px solid var(--text-color);
-}
-
 /* Container */
 .main--container{
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
-  line-height: 2;
+  padding: 0 1rem;
 }
-.main-weather{
+.body__main--weather{
   color: var(--text-color);
 }
 p{
   word-spacing: 6px;
 }
-.main-temperature-addition{
+.body__main--tempAddInfo{
   font-size: 10pt;
   display: flex;
   justify-content: center;
 }
-.main-temperature-addition p{
+.body__main--tempAddInfo p{
   margin-left: 10px;
 }
-.main-temperature-image{
+.body__main--tempContent{
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
-.main-temperature-information{
+.body__main--tempInfo{
   text-align: center;
 }
-.main__image-temp{
-  width:20%;
-  height: 20%;
+.body__main--tempImg{
+  width:16%;
+  height: 16%;
 }
 span{
   font-weight: bold;
 }
-.span--delete{
+.body__span--delete{
   word-spacing: 0;
   font-weight: normal;
 }
-.main-temperature-image p {
+.body__main--tempContent p {
   color: white;
   font-weight: bold;
   margin: 0;
@@ -90,14 +58,17 @@ span{
 }
 
 
-.upcoming-weather{
+.body__main--flex{
   display: flex;
   justify-content: space-around;
-  margin: 2rem 4rem;
+  margin: 2rem 3rem 0 3rem;
 }
 
-.upcoming-weather > div {
+.body__main--flex > div {
   width: 100%;
+  margin: 2.2rem;
+  margin-bottom: 0;
+  padding: 0;
 }
 
 time {
@@ -105,7 +76,7 @@ time {
   text-align: center;
 }
 
-.upcoming-weather p {
+.body__main--flex p {
   text-align: center;
 }
 
@@ -118,22 +89,22 @@ time {
     justify-content: space-between;
   }
 /* Main Weather */
-.main-weather{
+.body__main--weather{
   display: flex;
   text-align: justify;
   font-size: 9pt;
 }
 
-.main__image-temp{
+.body__main--tempImg{
   width: 80%;
   height: 80%;
 }
 
-.main-temperature-information{
+.body__main--tempInfo{
   margin-top: 80px;
 }
 
-.image-placeholder {
+.body__main--imgPlaceholder {
   width: 42%;
   height: 20%;
   display: block;
@@ -141,25 +112,25 @@ time {
 } 
 
   /* Flex -Mobile */
-  .upcoming-weather{
+  .body__main--flex{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 0;
   }
-  .flex--border:not(:nth-last-of-type(1)) {
+  .body__main--content:not(:nth-last-of-type(1)) {
       border-bottom:2px solid var(--secondary-color);
   }
-  .flex--border{
+  .body__main--content{
     display: flex;
   }
   time{
     margin-top: 70px;
   }
-  .flex--border p{
+  .body__main--content p{
     margin-top: 70px;
   }
-  .image-placeholder{
+ .body__main--imgPlaceholder{
     width: 30%;
     height: 30%;
     padding: 10px 0px;

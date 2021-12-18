@@ -43,7 +43,7 @@ class App extends Component {
                 // tempMax={this.state.weatherList[0].main.temp_max}
                 // discriptions={this.state.weatherList[0].weather[0].description}
                 iconId = {this.state.weatherList[0].weather[0].id}/>
-                <div className="upcoming-weather">
+                <div className="body__main--flex">
                   {this.state.weatherList.map((item,index) =>{
                     if(index > 0 && index <8){
                       return  < WeatherItem time={item.dt_txt} dayDegree={item.main.temp} 
