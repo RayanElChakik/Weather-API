@@ -12,33 +12,54 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      weatherList: fakeWeather.list,
+      weatherList: undefined,
+      country: ""
     };
   }
-  
+  getWeatherList= (country =>{
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${country}&cnt=8&units=metric&appid=bd89960110bd1c361fcd7effa2b2904e`)
+    .then(res=> res.json())
+    .then(data=>this.setState({weatherList:data.list}))
+  })
   handleInputChange = value => {
-    this.setState({ name: value });
+    this.setState({ country: value });
+    this.getWeatherList(value)
   };
 
   render() {
-    return (
-      <div className="app">
-          <header>
-          <Search />
-          </header>
-          <div className="main--container"> 
-              <MainWeather humidity={this.state.weatherList[0].main.humidity} pressure={this.state.weatherList[0].main.pressure} tempMin={this.state.weatherList[0].main.temp_min} tempMax={this.state.weatherList[0].main.temp_max}
-              discriptions={this.state.weatherList[0].weather[0].description}/>
-              <div className="upcoming-weather">
-                {this.state.weatherList.map((item,index) =>{
-                  if(index > 0 && index <8){
-                    return  < WeatherItem time={item.dt_txt} dayDegree={item.main.temp} />
-                  }
-                })}
-              </div>
-      </div>
-      </div>
-    );
+    if(this.state.country !="" && this.state.weatherList !== undefined){
+      return (
+        <div className="app">
+            <header>
+            <Search handleInput={this.handleInputChange}/>
+            </header>
+            <div className="main--container"> 
+                <MainWeather 
+                humidity={this.state.weatherList[0].main.humidity} 
+                pressure={this.state.weatherList[0].main.pressure} 
+                tempMin={this.state.weatherList[0].main.temp_min} 
+                tempMax={this.state.weatherList[0].main.temp_max}
+                discriptions={this.state.weatherList[0].weather[0].description}/>
+                <div className="upcoming-weather">
+                  {this.state.weatherList.map((item,index) =>{
+                    if(index > 0 && index <8){
+                      return  < WeatherItem time={item.dt_txt} dayDegree={item.main.temp} />
+                    }
+                  })}
+                </div>
+        </div>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div className="app">
+            <header>
+            <Search handleInput={this.handleInputChange}/>
+            </header>
+       </div>
+      );
+    }
   }
 }
 

@@ -9,7 +9,7 @@ export default class WeatherItem extends Component {
       <div className="flex--border">
       <time>{this.props.time.split(" ")[1].substring(0,5)}</time>
       <img className="image-placeholder" src={partlycloudy} alt="Partly-cloudy Weather" placeholder="Partly-cloudy weather"/>
-      <p>{Math.round(this.props.dayDegree-273.15)}&deg;</p>
+      <p>{Math.round(this.props.dayDegree)}&deg;</p>
   </div>
       );
   }
@@ -23,7 +23,7 @@ export class MainWeather extends Component {
                       <p>{this.props.discriptions}</p>
               </div>
               <div className="main-temperature-information">
-                  <p><span>Temperature </span>  <span className="span--delete"> {Math.round(this.props.tempMin-273.15)}&deg; to {Math.round(this.props.tempMax-273.15)} &#8451;</span></p>
+                  <p><span>Temperature </span>  <span className="span--delete"> {Math.round(this.props.tempMin)}&deg; to {Math.round(this.props.tempMax)} &#8451;</span></p>
                   <div className="main-temperature-addition">
                     <p> <span>Humidity</span>  {this.props.humidity}% </p>
                     <p> <span className="indent">Pressure </span> {this.props.pressure}</p>  
