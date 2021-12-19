@@ -47,7 +47,8 @@ class App extends Component {
                   {this.state.weatherList.map((item,index) =>{
                     if(index > 0 && index <8){
                       return  < WeatherItem time={item.dt_txt} dayDegree={item.main.temp} 
-                      iconId={item.weather[0].id}/>
+                      iconId={item.weather[0].id}
+                      alt={item.weather[0].description}/>
                     }
                   })}
                 </div>
