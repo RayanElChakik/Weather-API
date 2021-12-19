@@ -81,7 +81,19 @@ time {
 .body__main--flex p {
   text-align: center;
 }
+/* 
+/* Error Message Display */
+/* .body__main--errorDisplay::before,  .body__main--errorDisplay::after{
+  content:"&#xf071;";
+  font-size:48px;
+  color:red;
 
+}  */
+.body__main--errorDisplay{
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
 /* Mobile Sized Screen */
 
 @media only screen and (max-width: 767px) {

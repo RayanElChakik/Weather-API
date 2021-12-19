@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
-import partlycloudy from "../img/weather-icons/partlycloudy.svg";
-import clear from "../img/weather-icons/clear.svg";
+// import { render } from "react-dom";
+// import partlycloudy from "../img/weather-icons/partlycloudy.svg";
+// import clear from "../img/weather-icons/clear.svg";
 
 
 export default class WeatherItem extends Component {
@@ -58,7 +58,7 @@ export class MainWeather extends Component {
     return (
       <div className="body__main--weather">
               <div className="body__main--tempContent">
-                      <img className="body__main--tempImg" src={require(`../img/weather-icons/${this.get_WeatherIcons(this.props.iconId)}.svg`)} alt={this.props.currentWeather.weather[0].description} placeholder={this.props.currentWeather.weather[0].description} />
+                      <img className="body__main--tempImg" src={require(`../img/weather-icons/${this.get_WeatherIcons(this.props.currentWeather.weather[0].id)}.svg`)} alt={this.props.currentWeather.weather[0].description} placeholder={this.props.currentWeather.weather[0].description} />
                       <p>{this.props.currentWeather.weather[0].description}</p>
               </div>
               <div className="body__main--tempInfo">
